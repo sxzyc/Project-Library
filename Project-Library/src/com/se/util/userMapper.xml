@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="rjxy.userMapper1"> 
+<insert id="insertAdmin" parameterType="com.se.bean.Admin">
+insert into admin(username,password)values(#{username},#{password});
+</insert>
+<delete id="deleteAdmin" parameterType="com.se.bean.Admin">
+delete from admin where id=#{id};
+</delete>
+<update id="updateAdmin" parameterType="com.se.bean.Admin">
+update admin set username=#{username},password=#{password} where id=#{id};
+</update>
+	<select id="getAdmin" parameterType="int" 
+		resultType="com.se.bean.Admin">
+		select * from admin where id=#{id};
+	</select>
+	<select id="selectAllAdmins" resultType="com.se.bean.Admin">
+		select * from admin;
+	</select>
+
+	<select id="selectAdmin" parameterType="com.se.bean.Admin" resultType="com.se.bean.Admin">
+		select * from admin where username=#{username} and password=#{password};
+	</select>
+	
+	
+<insert id="insertBook" parameterType="com.se.bean.Book">
+insert into t_book(barcode,bookName,bookTypeid,price,count,publishDate,publish,introduction,bookPhoto) values(#{barcode},#{bookName},#{bookTypeid},#{price},#{count},str_to_date(#{publishDate},'%Y-%m-%d'),#{publish},#{introduction},#{bookPhoto});
+</insert>
+<delete id="deleteBook" parameterType="com.se.bean.Book">
+delete  from t_book where id=#{id};
+</delete>
+<update id="updateBook" parameterType="com.se.bean.Book">
+update t_book set barcode=#{barcode},bookName=#{bookName},bookTypeid=#{bookTypeid},price=#{price},count=#{count},publishDate=str_to_date(#{publishDate},'%Y-%m-%d'),publish=#{publish},introduction=#{introduction},bookPhoto=#{bookPhoto} where id=#{id};
+</update>
+	<select id="getBook" parameterType="int" 
+		resultType="com.se.bean.Book">
+		select * from t_book where id=#{id};
+	</select>
+	<select id="selectAllBook" resultType="com.se.bean.Book">
+		select * from t_book;
+	</select>
+	
+	
+	<insert id="insertReader" parameterType="com.se.bean.Reader">
+insert into t_reader(readerNo,readerType,readerName,readerPaw,sex,telephone,email,qq,address) values(#{readerNo},#{readerType},#{readerName},#{readerPaw},#{sex},#{telephone},#{email},#{qq},#{address});
+</insert>
+<delete id="deleteReader" parameterType="com.se.bean.Reader">
+delete  from t_reader where id=#{id};
+</delete>
+<update id="updateReader" parameterType="com.se.bean.Reader">
+update t_reader set readerNo=#{readerNo},readerType=#{readerType},readerName=#{readerName},readerPaw=#{readerPaw},sex=#{sex},telephone=#{telephone},email=#{email},email=#{email},qq=#{qq},address=#{address} where id=#{id};
+</update>
+	<select id="getReader" parameterType="int" 
+		resultType="com.se.bean.Reader">
+		select * from t_reader where id=#{id};
+	</select>
+	<select id="selectAllReader" resultType="com.se.bean.Reader">
+		select * from t_reader;
+	</select>
+	<select id="selectReader" parameterType="com.se.bean.Reader" resultType="com.se.bean.Reader">
+		select * from t_reader where readerName=#{readerName} and readerPaw=#{readerPaw};
+	</select>
+	
+	<insert id="insertLoanInfo" parameterType="com.se.bean.LoanInfo">
+insert into t_loaninfo(name,book,reader,status,borrowDate,returnDate) values(#{name},#{book},#{reader},#{status},str_to_date(#{borrowDate},'%Y-%m-%d'),str_to_date(#{returnDate},'%Y-%m-%d'));
+</insert>
+<delete id="deleteLoanInfo" parameterType="com.se.bean.LoanInfo">
+delete  from t_loaninfo where loadId=#{id};
+</delete>
+<update id="updateLoanInfo" parameterType="com.se.bean.LoanInfo">
+update t_loaninfo set name=#{name},book=#{book},reader=#{reader},status=#{status},borrowDate=str_to_date(#{borrowDate},'%Y-%m-%d'),returnDate=str_to_date(#{returnDate},'%Y-%m-%d') where loadId=#{loadId};
+</update>
+	<select id="getLoanInfo" parameterType="int" 
+		resultType="com.se.bean.LoanInfo">
+		select * from t_loaninfo where loadId=#{id};
+	</select>
+	<select id="selectAllLoanInfo" resultType="com.se.bean.LoanInfo">
+		select * from t_loaninfo;
+	</select>
+	<select id="getAllLoanInfo" parameterType="String" 
+		resultType="com.se.bean.LoanInfo">
+		select * from t_loaninfo where name=#{readername};
+	</select>
+	
+	<insert id="insertBookType" parameterType="com.se.bean.BookType">
+insert into t_booktype(bookTypeName,days) values(#{bookTypeName},#{days});
+</insert>
+<delete id="deleteBookType" parameterType="com.se.bean.BookType">
+delete  from t_booktype where bookTypeid=#{id};
+</delete>
+<update id="updateBookType" parameterType="com.se.bean.BookType">
+update t_booktype set bookTypeName=#{bookTypeName},days=#{days} where bookTypeid=#{bookTypeid};
+</update>
+	<select id="getBookType" parameterType="int" 
+		resultType="com.se.bean.BookType">
+		select * from t_booktype where bookTypeid=#{id};
+	</select>
+	<select id="selectAllBookType" resultType="com.se.bean.BookType">
+		select * from t_booktype;
+	</select>
+	
+	<insert id="insertUserType" parameterType="com.se.bean.UserType">
+insert into t_usertype(userTypeName,power) values(#{userTypeName},#{power});
+</insert>
+<delete id="deleteUserType" parameterType="com.se.bean.UserType">
+delete  from t_usertype where id=#{id};
+</delete>
+<update id="updateUserType" parameterType="com.se.bean.UserType">
+update t_usertype set userTypeName=#{userTypeName},power=#{power} where id=#{id};
+</update>
+	<select id="getUserType" parameterType="int" 
+		resultType="com.se.bean.UserType">
+		select * from t_usertype where id=#{id};
+	</select>
+	<select id="selectAllUserType" resultType="com.se.bean.UserType">
+		select * from t_usertype;
+	</select>
+</mapper>

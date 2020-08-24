@@ -13,7 +13,9 @@
 基于JavaEE采用SSM框架实现的图书管理系统，图片采用异步上传，Java后端通过解析json进行接收
 
 ### 注意
-tomcat需要为**8.5**版本，9.0会导致js文件在浏览器显示乱码
+ - tomcat需要为**8.5**版本，9.0会导致js文件在浏览器显示乱码
+ - 配置tomcat完成后，首先双击**Tomcat v8.5 Server at localhost [Stopped,Synchronized]**，否则图片上传失败
+![456](https://tva3.sinaimg.cn/large/005RH3Rxly1gi1mxiqqa8j311f0hiabt.jpg)
 
 ### 截图
 ![登录](https://tvax3.sinaimg.cn/large/005RH3Rxly1gi12t4i1qkj31hc0pt1ky.jpg)
@@ -23,4 +25,4 @@ tomcat需要为**8.5**版本，9.0会导致js文件在浏览器显示乱码
 ### 部署说明
 - conf.xml是Mybatis核心配置文件，所有sql语句统一放在userMapper.xml。（sql语句不涉及多表查询）
 - 优点：项目目录结构清晰，简单明了，容易查找修改。
-![配置文件](http://wx3.sinaimg.cn/large/0061MTh9ly1gi1meqai33j317o0h20vn.jpg)
+![233](https://tvax3.sinaimg.cn/large/005RH3Rxly1gi1mv8td73j317o0h20vn.jpg)

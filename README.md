@@ -14,7 +14,7 @@
 
 ### 注意
  - tomcat需要为**8.5**版本，9.0会导致js文件在浏览器显示乱码
- - 配置tomcat完成后，首先双击**Tomcat v8.5 Server at localhost [Stopped,Synchronized]**，否则图片上传失败
+ - 配置tomcat完成后，首先双击**Tomcat v8.5 Server at localhost [Stopped,Synchronized]**进行如下配置，否则图片上传失败
 ![456](https://tva3.sinaimg.cn/large/005RH3Rxly1gi1mxiqqa8j311f0hiabt.jpg)
 
 ### 截图

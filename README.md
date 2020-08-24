@@ -2,7 +2,8 @@
 # 图书管理系统------27766738726
 ![GitHub repo size](https://img.shields.io/github/repo-size/sxzyc/Project-Library)
 ![GitHub](https://img.shields.io/github/license/sxzyc/Project-Library)
-
+### 声明
+此项目是本人另一个项目的扩展，同时也是本人的毕业设计项目。
 ### 功能
 - 可以把借书信息导出为xls格式进行保存
 - second

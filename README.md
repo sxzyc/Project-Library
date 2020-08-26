@@ -21,6 +21,7 @@
 ### 部署说明
 - `conf.xml`是MyBatis核心配置文件，所有SQL语句统一放在`userMapper.xml`。（SQL语句不涉及多表查询）
 ![说明](https://tvax3.sinaimg.cn/large/005RH3Rxly1gi1mv8td73j317o0h20vn.jpg)
+![说明1](https://github.com/sxzyc/Project-Library/blob/master/Project-Library/images/tomcat配置.png)
 
 ### 截图赏析
 ![登录](https://tvax3.sinaimg.cn/large/005RH3Rxly1gi12t4i1qkj31hc0pt1ky.jpg)
